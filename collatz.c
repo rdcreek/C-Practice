@@ -1,3 +1,7 @@
+/*Program prompts for an integer and outputs the number of steps in the Collatz sequence followed by the sequence.*/
+
+
+
 #include<stdio.h>
 
 
@@ -23,6 +27,7 @@ int main(int argc, char* argv[]){
 
 
 //Functions
+//Count the number of numbers in the sequence. 
 int collatzcount(int num){
     int count = 1; 
     while (num >= 1){
@@ -40,7 +45,7 @@ int collatzcount(int num){
     }
     return count;
 }
-
+//print the sequence. 
 int collatzsequence(int num){
     int count = collatzcount(num);
     int sequence[count]; 
@@ -63,8 +68,5 @@ int collatzsequence(int num){
     printf("The sequence: "); 
     for (int j = 0; j < count; j++){
         printf("%d, ", sequence[j]); 
-    }
-
-
-    //return sequence; 
+    }    
 }
