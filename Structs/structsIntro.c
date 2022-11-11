@@ -10,7 +10,7 @@ struct student{
 };
 
 int main(void) {
-	//! showMemory(start=65520)
+	
     struct student me = {"Chuck", "Norris", 1965, 3.5};
     struct student you = {"Sean", "Connery", 1947, 3.5};
     printf("Names: %s %s, %s %s\n", me.firstName, me.lastName, you.firstName, you.lastName);
