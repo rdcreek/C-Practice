@@ -5,9 +5,11 @@ struct digit {
     int num;
     struct digit * next;
 };
+
+\\Function Prototypes
 struct digit * createDigit(int dig);
 struct digit * append(struct digit * end, struct digit * newDigitptr);
-
+void printNumber(struct digit *start);
 
 int main(void) {
    
@@ -24,7 +26,7 @@ int main(void) {
     end = append(end, newDigitptr);
     newDigitptr = createDigit(fourth);
     end = append(end, newDigitptr);
-    
+    printNumber(start); 
     
     // free needs to be added  here
     tmp = start->next;
@@ -50,4 +52,13 @@ struct digit * createDigit(int dig) {
     ptr->num = dig;
     ptr->next = NULL;
     return ptr;
+}
+
+void printNumber(struct digit *start){
+    struct digit * ptr = start;
+    while (ptr!=NULL) {
+        printf("%d", ptr->num);
+        ptr = ptr->next;
+    }
+    printf("\n");
 }
