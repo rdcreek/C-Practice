@@ -10,7 +10,9 @@ struct digit {
 struct digit * createDigit(int dig);
 struct digit * append(struct digit * end, struct digit * newDigitptr);
 void printNumber(struct digit *start);
-
+void freeNumber(struct digit *start); 
+    
+    
 int main(void) {
    
     struct digit *start, *newDigitptr, *end, *tmp;
@@ -27,14 +29,8 @@ int main(void) {
     newDigitptr = createDigit(fourth);
     end = append(end, newDigitptr);
     printNumber(start); 
-    
-    // free needs to be added  here
-    tmp = start->next;
-    free(start);
-    start = tmp;
-    tmp = start->next;
-    free(start);
-    free(tmp);
+    freeNumber(start);
+   
     return 0;
 }
 
@@ -61,4 +57,14 @@ void printNumber(struct digit *start){
         ptr = ptr->next;
     }
     printf("\n");
+}
+
+void freeNumber(struct digit *start) {
+    struct digit * ptr = start;
+    struct digit * tmp;
+    while (ptr!=NULL) {
+        tmp = ptr->next;
+        free(ptr);
+        ptr = tmp;
+    }
 }
