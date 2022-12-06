@@ -13,7 +13,7 @@ int main(void) {
 	num = 1;
 	isHighest = 1;
 	while (fscanf(iFile, "%lf", &Avg) != EOF) {
-		ctr++;
+		num++;
 		if (Avg > myclass) {
 			isHighest = 0;
 			printf("No %d\n", num);
